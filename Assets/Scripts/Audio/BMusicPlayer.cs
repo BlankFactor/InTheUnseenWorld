@@ -15,4 +15,15 @@ public abstract class BMusicPlayer : BAudioPlayer
     {
         AudioManager.instance.AddMusicLisitenner(this);
     }
+
+    protected override AudioSource CreateAudioSource(GameObject _go)
+    {
+        AudioSource _as;
+
+        _as = _go.AddComponent<AudioSource>();
+        _as.playOnAwake = true;
+        _as.loop = true;
+
+        return _as;
+    }
 }

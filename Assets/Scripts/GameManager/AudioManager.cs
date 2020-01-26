@@ -28,8 +28,6 @@ public class AudioManager : MonoBehaviour
 
     public void Update()
     {
-        ChangeSoundVolume();
-        ChangeMusicVolume();
     }
 
     #region 监听组管理操作

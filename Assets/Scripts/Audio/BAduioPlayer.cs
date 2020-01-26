@@ -14,16 +14,7 @@ public abstract class BAudioPlayer : MonoBehaviour
     /// </summary>
     /// <param name="_go"></param>
     /// <returns></returns>
-    public AudioSource CreateAudioSource(GameObject _go)
-    {
-        AudioSource _as;
-
-        _as = _go.AddComponent<AudioSource>();
-        _as.playOnAwake = false;
-        _as.loop = false;
-
-        return _as;
-    }
+    protected abstract AudioSource CreateAudioSource(GameObject _go);
 
     public abstract void ChangeVolume(float _value);
 }

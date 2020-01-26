@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         Climb();
     }
 
+    // 键盘输入检测
     private void CheckInput() {
         axisX = Input.GetAxis("Horizontal");
         axisRawX = Input.GetAxisRaw("Horizontal");
@@ -57,9 +58,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 角色移动
-    /// </summary>
     private void Move()
     {
         // 仅地面上可移动
@@ -70,10 +68,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 转换人物朝向
-    /// </summary>
-    /// <param name="_dir">0->左 1->右</param>
+    // 转换人物朝向
     void switchDirection(float _dir) {
         if (_dir == 1)
         {
@@ -86,9 +81,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 角色跳跃
-    /// </summary>
     private void Jump() {
         // 起跳
         if (jumpPressed && pcc.onGround)
@@ -106,9 +98,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 角色攀爬
-    /// </summary>
     private void Climb() {
         if (pcc.canClimb) {
             rb.bodyType = RigidbodyType2D.Static;
